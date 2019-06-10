@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-06-08T08:36:54.097Z</updated>
+  <updated>2019-06-10T15:22:43.121Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Caprice-2019-06-10</title>
+    <link href="/2019/06/10/Caprice-2019-06-10/"/>
+    <id>/2019/06/10/Caprice-2019-06-10/</id>
+    <published>2019-06-10T14:49:21.000Z</published>
+    <updated>2019-06-10T15:22:43.121Z</updated>
+    
+    <summary type="html">
+    
+      今日随想
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Book-深入理解 Java 虚拟机</title>
+    <link href="/2019/06/09/Book-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <id>/2019/06/09/Book-深入理解-Java-虚拟机/</id>
+    <published>2019-06-09T12:13:44.000Z</published>
+    <updated>2019-06-10T00:55:02.996Z</updated>
+    
+    <summary type="html">
+    
+      深入理解 Java 虚拟机：JVM 高级特性与最佳实践-读书笔记
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Java" scheme="/tags/Java/"/>
+    
+      <category term="JVM" scheme="/tags/JVM/"/>
+    
+  </entry>
   
   <entry>
     <title>Caprice-2019-06-08</title>
@@ -52,9 +94,9 @@
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
       <category term="Java" scheme="/tags/Java/"/>
+    
+      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   
