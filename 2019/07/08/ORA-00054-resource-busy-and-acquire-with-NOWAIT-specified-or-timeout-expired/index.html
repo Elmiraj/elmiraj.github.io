@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: Caprice | elmiraj</title>
+  <title itemprop="name">ORA-00054:resource busy and acquire with NOWAIT specified or timeout expired | elmiraj</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -310,97 +310,182 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="Caprice.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      ORA-00054:resource busy and acquire with NOWAIT specified or timeout expired</h1>
+      <p class="entry-census">
+        <span>
+          <a href="elmiraj.top">
+            <img src="https://cdn.jsdelivr.net/gh/Elmiraj/cdn/img/custom/Popuko.png">
+          </a>
+        </span>
+        <span>
+          <a href="elmiraj.top">Elmiraj</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-7-8<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">Caprice</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h3 id="Oracle-报错"><a href="#Oracle-报错" class="headerlink" title="Oracle 报错"></a>Oracle 报错</h3><p>这个错误按照字面意思就是：资源忙，被占用。</p>
+<h3 id="处理思路"><a href="#处理思路" class="headerlink" title="处理思路"></a>处理思路</h3><p>查到谁在占用资源，并且杀掉占用该资源的 Session 即可。</p>
+<h3 id="可能产生原因"><a href="#可能产生原因" class="headerlink" title="可能产生原因"></a>可能产生原因</h3><ol>
+<li>创建索引时产生的锁</li>
+<li>dml 语句产生的锁</li>
+<li>索引创建时加上关键字 online 时产生的锁  </li>
+</ol>
+<h3 id="问题处理"><a href="#问题处理" class="headerlink" title="问题处理"></a>问题处理</h3><ol>
+<li>检查哪个用户占用了资源  </li>
+</ol>
+<pre><code class="SQL">&gt; select l.session_id,o.owner,o.object_name from v$locked_object l,dba_objects o where l.object_id=o.object_id;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>SESSION_ID</th>
+<th>OWNER</th>
+<th>OBJECT_NAME </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 2205</td>
+<td>REPORTUSER</td>
+<td>T_USER_LABEL </td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>利用 session_id 查出更详细的信息 </li>
+</ol>
+<pre><code class="SQL">&gt; SELECT sid, serial#, username, oSUSEr, terminal,program ,action, prev_exec_start FROM v$session where sid = 2205;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>SID</th>
+<th>SERIAL#</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2205</td>
+<td>3045</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>根据查出来的 SID 和 SERIAL# 杀掉占用资源的会话</li>
+</ol>
+<pre><code class="SQL">&gt; alter system kill session &#39;2205,3045&#39;;
+</code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/07/14/Caprice-2019-07-14/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Caprice-2019-07-14</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/06/27/9种处理异常的最佳实践/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/fallout/fallout-4-vault-boy.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                9种处理异常的最佳实践</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/07/14/Caprice-2019-07-14/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/07/14/Caprice-2019-07-14/">
-    Caprice-2019-07-14</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-7-14</div>
-    <p>
-    今日的一些想法</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/07/14/Caprice-2019-07-14/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/06/23/Caprice-2019-06-23/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/06/23/Caprice-2019-06-23/">
-    Caprice-2019-06-23</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-6-23</div>
-    <p>
-    今日随想</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/06/23/Caprice-2019-06-23/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href="elmiraj.top" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/Elmiraj/cdn/img/custom/Popuko.png" itemprop="image" alt="Elmiraj" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="elmiraj.top" itemprop="url" rel="author">Elmiraj</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>ToolMan</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

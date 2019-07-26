@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-06-24T02:50:41.821Z</updated>
+  <updated>2019-07-26T08:05:41.308Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Caprice-2019-07-14</title>
+    <link href="/2019/07/14/Caprice-2019-07-14/"/>
+    <id>/2019/07/14/Caprice-2019-07-14/</id>
+    <published>2019-07-14T06:51:21.000Z</published>
+    <updated>2019-07-26T08:05:41.308Z</updated>
+    
+    <summary type="html">
+    
+      今日的一些想法
+    
+    </summary>
+    
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+      <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="Caprice" scheme="/tags/Caprice/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ORA-00054:resource busy and acquire with NOWAIT specified or timeout expired</title>
+    <link href="/2019/07/08/ORA-00054-resource-busy-and-acquire-with-NOWAIT-specified-or-timeout-expired/"/>
+    <id>/2019/07/08/ORA-00054-resource-busy-and-acquire-with-NOWAIT-specified-or-timeout-expired/</id>
+    <published>2019-07-08T10:53:42.000Z</published>
+    <updated>2019-07-14T07:27:18.707Z</updated>
+    
+    <summary type="html">
+    
+      Oracle 报错
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Java" scheme="/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>9种处理异常的最佳实践</title>
+    <link href="/2019/06/27/9%E7%A7%8D%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
+    <id>/2019/06/27/9种处理异常的最佳实践/</id>
+    <published>2019-06-27T11:18:24.000Z</published>
+    <updated>2019-07-26T08:02:56.713Z</updated>
+    
+    <summary type="html">
+    
+      Java 处理异常的9种最佳实践
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Java" scheme="/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>五种开源协议的区别</title>
     <link href="/2019/06/24/%E4%BA%94%E7%A7%8D%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>/2019/06/24/五种开源协议的区别/</id>
     <published>2019-06-24T02:41:24.000Z</published>
-    <updated>2019-06-24T02:50:41.821Z</updated>
+    <updated>2019-06-24T12:08:54.000Z</updated>
     
     <summary type="html">
     
@@ -43,7 +105,7 @@
     <link href="/2019/06/23/Caprice-2019-06-23/"/>
     <id>/2019/06/23/Caprice-2019-06-23/</id>
     <published>2019-06-23T08:19:45.000Z</published>
-    <updated>2019-06-24T00:53:48.237Z</updated>
+    <updated>2019-07-26T08:05:20.748Z</updated>
     
     <summary type="html">
     
@@ -51,7 +113,7 @@
     
     </summary>
     
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
       <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
@@ -65,7 +127,7 @@
     <link href="/2019/06/23/Everything-about-Redis/"/>
     <id>/2019/06/23/Everything-about-Redis/</id>
     <published>2019-06-23T05:31:52.000Z</published>
-    <updated>2019-06-24T08:27:17.493Z</updated>
+    <updated>2019-06-25T00:51:36.000Z</updated>
     
     <summary type="html">
     
@@ -87,7 +149,7 @@
     <link href="/2019/06/21/%E6%8F%90%E4%BE%9B%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%92%8C%E8%BF%87%E6%BB%A4%E7%9A%84DNS%E6%9C%8D%E5%8A%A1/"/>
     <id>/2019/06/21/提供隐私保护和过滤的DNS服务/</id>
     <published>2019-06-21T02:07:48.000Z</published>
-    <updated>2019-06-21T14:45:08.519Z</updated>
+    <updated>2019-06-21T14:45:08.000Z</updated>
     
     <summary type="html">
     
@@ -107,7 +169,7 @@
     <link href="/2019/06/16/Book-Java-%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E7%AC%94%E8%AE%B0/"/>
     <id>/2019/06/16/Book-Java-编程思想笔记/</id>
     <published>2019-06-16T05:55:24.000Z</published>
-    <updated>2019-06-17T05:39:12.530Z</updated>
+    <updated>2019-06-17T05:39:12.000Z</updated>
     
     <summary type="html">
     
@@ -118,9 +180,9 @@
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Java" scheme="/tags/Java/"/>
-    
       <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="Java" scheme="/tags/Java/"/>
     
   </entry>
   
@@ -129,7 +191,7 @@
     <link href="/2019/06/10/Caprice-2019-06-10/"/>
     <id>/2019/06/10/Caprice-2019-06-10/</id>
     <published>2019-06-10T14:49:21.000Z</published>
-    <updated>2019-06-10T15:22:43.121Z</updated>
+    <updated>2019-07-26T08:04:59.282Z</updated>
     
     <summary type="html">
     
@@ -137,7 +199,7 @@
     
     </summary>
     
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
       <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
@@ -149,7 +211,7 @@
     <link href="/2019/06/09/Book-%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-Java-%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     <id>/2019/06/09/Book-深入理解-Java-虚拟机/</id>
     <published>2019-06-09T12:13:44.000Z</published>
-    <updated>2019-06-16T05:55:40.094Z</updated>
+    <updated>2019-06-16T05:55:40.000Z</updated>
     
     <summary type="html">
     
@@ -171,7 +233,7 @@
     <link href="/2019/06/08/Caprice-2019-06-08/"/>
     <id>/2019/06/08/Caprice-2019-06-08/</id>
     <published>2019-06-08T08:24:19.000Z</published>
-    <updated>2019-06-08T08:36:54.097Z</updated>
+    <updated>2019-06-08T08:36:54.000Z</updated>
     
     <summary type="html">
     
@@ -191,7 +253,7 @@
     <link href="/2019/06/08/Book-%E7%A8%8B%E5%BA%8F%E5%91%98%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E4%B9%A6%E5%8D%95/"/>
     <id>/2019/06/08/Book-程序员练级攻略书单/</id>
     <published>2019-06-08T07:40:18.000Z</published>
-    <updated>2019-06-08T08:12:38.666Z</updated>
+    <updated>2019-06-08T08:12:38.000Z</updated>
     
     <summary type="html">
     
@@ -202,9 +264,9 @@
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Java" scheme="/tags/Java/"/>
-    
       <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="Java" scheme="/tags/Java/"/>
     
   </entry>
   
@@ -213,7 +275,7 @@
     <link href="/2019/06/08/%E5%8D%81%E5%B9%B4%E5%A6%82%E4%B8%80%E6%97%A5%EF%BC%8C%E7%BB%83%E4%B9%A0%E7%BC%96%E7%A8%8B/"/>
     <id>/2019/06/08/十年如一日，练习编程/</id>
     <published>2019-06-08T07:04:02.000Z</published>
-    <updated>2019-06-08T07:31:39.514Z</updated>
+    <updated>2019-06-08T07:31:39.000Z</updated>
     
     <summary type="html">
     
@@ -233,7 +295,7 @@
     <link href="/2019/06/08/uv-%E5%92%8C-pv-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>/2019/06/08/uv-和-pv-的区别/</id>
     <published>2019-06-08T05:18:09.000Z</published>
-    <updated>2019-06-12T07:50:50.306Z</updated>
+    <updated>2019-06-12T07:50:50.000Z</updated>
     
     <summary type="html">
     
@@ -255,7 +317,7 @@
     <link href="/2019/06/03/%E5%9C%A8%E6%88%90%E9%83%BD%E5%90%83%E2%80%98%E7%8B%AC%E9%A3%9F%E2%80%99/"/>
     <id>/2019/06/03/在成都吃‘独食’/</id>
     <published>2019-06-03T05:36:05.000Z</published>
-    <updated>2019-06-08T06:35:27.459Z</updated>
+    <updated>2019-06-08T06:35:27.000Z</updated>
     
     <summary type="html">
     
@@ -277,7 +339,7 @@
     <link href="/2019/05/30/Book-%E7%99%BD%E5%A4%9C%E8%A1%8C/"/>
     <id>/2019/05/30/Book-白夜行/</id>
     <published>2019-05-30T13:00:58.000Z</published>
-    <updated>2019-06-08T08:14:21.142Z</updated>
+    <updated>2019-06-08T08:14:21.000Z</updated>
     
     <summary type="html">
     
@@ -288,13 +350,13 @@
       <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
       <category term="东野圭吾" scheme="/tags/%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE/"/>
     
       <category term="日本" scheme="/tags/%E6%97%A5%E6%9C%AC/"/>
     
       <category term="读过" scheme="/tags/%E8%AF%BB%E8%BF%87/"/>
+    
+      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   

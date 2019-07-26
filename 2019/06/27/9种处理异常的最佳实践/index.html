@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: Caprice | elmiraj</title>
+  <title itemprop="name">9种处理异常的最佳实践 | elmiraj</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -310,97 +310,304 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="Caprice.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/fallout/fallout-4-vault-boy.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/fallout/fallout-4-vault-boy.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      9种处理异常的最佳实践</h1>
+      <p class="entry-census">
+        <span>
+          <a href="elmiraj.top">
+            <img src="https://cdn.jsdelivr.net/gh/Elmiraj/cdn/img/custom/Popuko.png">
+          </a>
+        </span>
+        <span>
+          <a href="elmiraj.top">Elmiraj</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-6-27<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">Caprice</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p>翻译自：<a href="https://dzone.com/articles/9-best-practices-to-handle-exceptions-in-java" target="_blank" rel="noopener">9 Best Practices to Handle Exceptions in Java</a></p>
+<p>Java 中的异常处理并不是一个简单的主题。初学者觉得它很难懂，即使是成熟的开发者也会花数小时讨论应该抛出或者处理哪个异常。<br>这就是为什么大多数的开发团队都有一套自己的规则。如果你是一个团队的新人，你可能会惊讶于他们的规则可能比你所接触过的所有规则都要复杂繁琐。<br>尽管如此，依然有一些大多数团队使用的最佳实践。以下会介绍9种最佳实践来帮助你起步或者提升你的异常处理能力。  </p>
+<ol>
+<li>在 Finally 块中清理资源或者使用 try-with-resource 声明<br>它经常出现在当你在 try 块中使用资源时，像一个输入流（<a href="https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html" target="_blank" rel="noopener">InputStream</a>），使用后必须将它关闭。通常错误会出现在 try 块之后的关闭资源。</li>
+</ol>
+<pre><code class="Java">public void doNotCloseResourceInTry() {
+    FileInputStream inputStream = null;
+    try {
+        File file = new File(&quot;./tmp.txt&quot;);
+        inputStream = new FileInputStream(file);
+        // use the inputStream to read a file
+        // do NOT do this
+        inputStream.close();
+    } catch (FileNotFoundException e) {
+        log.error(e);
+    } catch (IOException e) {
+        log.error(e);
+    }
+}
+</code></pre>
+<p>问题就在于这个方法看起来完美无缺只要没有异常抛出来。try 块的所有声明都会被执行，然后资源会被关闭。<br>但是你出于一些理由加上了 try 块。你调用一个或多个可能抛异常的方法，或者你自己抛出个异常。这就意味着你可能到不了 try 块的最后了。结果就是，你也关闭不了这个资源。<br>所以，你应该把你所有的清理资源的代码放在 finally 块中或者使用 try-with-resource 声明。</p>
+<p><strong>使用 Finally 块</strong><br>相比于 try 块的最后几行，finally 块始终会被执行。即使是在成功运行的 try 块之后，抑或是 catch 块捕获异常之后。由于这个原因，你能保证清理了所有已开启的资源。  </p>
+<pre><code class="Java">public void closeResourceInFinally() {
+    FileInputStream inputStream = null;
+    try {
+        File file = new File(&quot;./tmp.txt&quot;);
+        inputStream = new FileInputStream(file);
+        // use the inputStream to read a file
+    } catch (FileNotFoundException e) {
+        log.error(e);
+    } finally {
+        if (inputStream != null) {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                log.error(e);
+            }
+        }
+    }
+}
+</code></pre>
+<p><strong>Java 7 的 try-with-resource 声明</strong><br>另一个选择是 try-with-resource 声明，我在我的另一篇文章 <a href="https://stackify.com/specify-handle-exceptions-java/#tryWithResource" target="_blank" rel="noopener">introduction to Java exception handling</a> 中解释了更多的细节。<br>如果你的资源实现了 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/AutoCloseable.html" target="_blank" rel="noopener">AutoCloseable</a> 接口，你就可以使用它。这也是大多数 Java 基础资源所使用的方法。当你在 try 语句中打开资源时，它就能自动在 try 块运行结束时被关闭，或者捕获异常。  </p>
+<pre><code class="Java">public void automaticallyCloseResource() {
+    File file = new File(&quot;./tmp.txt&quot;);
+    try (FileInputStream inputStream = new FileInputStream(file);) {
+        // use the inputStream to read a file
+    } catch (FileNotFoundException e) {
+        log.error(e);
+    } catch (IOException e) {
+        log.error(e);
+    }
+}
+</code></pre>
+<ol start="2">
+<li>倾向于特定的异常<br>你抛出的异常越明确越好。永远要想到不知道你代码的下一个继任者，或者几个月后的你自己，需要调用这个方法并且处理异常。<br>所以要确保提供给他们尽可能多的信息。这将会使你的 API 理解起来更加轻松。这样做的结果就是，调用你方法的调用者能够更好地处理异常或者防止额外的检查。<br>所以始终要去找最佳的异常方法，例如，用 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/NumberFormatException.html" target="_blank" rel="noopener">NumberFormatException</a> 取代 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html" target="_blank" rel="noopener">IllegalArgumentException</a>。防止抛出未指定的异常。  </li>
+</ol>
+<pre><code class="Java">public void doNotDoThis() throws Exception {
+    ...
+}
+public void doThis() throws NumberFormatException {
+    ...
+}
+</code></pre>
+<ol start="3">
+<li>将你特定的异常用文档记下来<br>无论何时你在方法中特定异常，你都应当用 JavaDoc 记录下来。<br>这跟之前的最佳实践都有同样的目的：为调用者提供尽可能多的信息，以使他防止或者处理这些异常。<br>所以，确保你的 JavaDoc 中加上了 <em>@throws</em> 注释来描述你可能造成异常的情况。  </li>
+</ol>
+<pre><code class="Java">/**
+ * This method does something extremely useful ...
+ *
+ * @param input
+ * @throws MyBusinessException if ... happens
+ */
+public void doSomething(String input) throws MyBusinessException {
+    ...
+}
+</code></pre>
+<ol start="4">
+<li>抛出具有描述性的信息<br>在这个最佳实践之后的想法和前面两个相同。但是这一次，你不用给你方法的调用者提供信息。当这个异常被写入日志文件中或者打印在控制台时，这个异常的信息就会被所有想要知道发生了什么的人所理解。<br>所，，它应该尽可能准确地描述这个问题，提供更加接近的信息以便理解这些异常事件。<br>可别说我说错了，你可不用写一大推的文字。但是你应该用一两个短句来描述这个异常的原因。这将会帮助你们的运维团队理解那些严重的问题，这也能让你更加轻松地分析任何的服务问题。<br>如果你抛出了很明确的异常，它的类名已经很明确地描述了它会抛出的错误的方式。所以，你不需要提供大量的额外的信息。例如，<em>NumberFormatException</em>。当你给 <em>String</em> 一个错误的类型时，它会通过 <em>java.lang.Long</em> 构造器抛出异常。  </li>
+</ol>
+<pre><code class="Java">try {
+    new Long(&quot;xyz&quot;);
+} catch (NumberFormatException e) {
+    log.error(e);
+}
+</code></pre>
+<p><em>NumberFormatException</em> 这个名字已经告诉你了这个问题的所在。它抛出的信息只需要提供输入的字符串就可以定位到问题所在。如果异常类的名称没有解释得这么清楚，你就需要在打印出的消息中提供确切的信息。  </p>
+<pre><code>17:17:26,386 ERROR TestExceptionHandling:52 - java.lang.NumberFormatException: For input string: &quot;xyz&quot;
+</code></pre><ol start="5">
+<li>首先捕获最明确的异常<br>这一点大多数的 IDE 会都能够帮助到你。当你想要首先捕获不那么明确的异常时它们就会提醒你这个问题。<br>问题在于只有第一个符合异常的捕获块会被执行。也就是说，如果你首先捕获了 <em>IllegalArgumentException</em>，你永远不会到达处理地更明确的 <em>NumberFormatException</em> 捕获块，因为它是 <em>IllegalArgumentException</em> 的子类。<br>永远第一个捕获最明确的异常并且将不那么明确的异常放在你列表的最后。<br>在下面的代码段中就是这样一个例子。第一个捕获块处理了所有的 <em>NumberFormatException</em>，第二个捕获块捕获了所有的不为 <em>NumberFormatException</em> 的 <em>IllegalArgumentException</em>。  </li>
+</ol>
+<pre><code class="Java">public void catchMostSpecificExceptionFirst() {
+    try {
+        doSomething(&quot;A message&quot;);
+    } catch (NumberFormatException e) {
+        log.error(e);
+    } catch (IllegalArgumentException e) {
+        log.error(e)
+    }
+}
+</code></pre>
+<ol start="6">
+<li>不要捕获 <em>Throwable</em> 类<br><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html" target="_blank" rel="noopener">Throwable</a> 是所有异常和错误的父类。你能在捕获块中使用它，但是你不应该这么做！<br>如果你在捕获框中使用 <em>Throwable</em> ，它不仅会捕获所有的异常，而且还会捕获所有的错误。错误应该被 JVM 抛出以便确定严重的问题，而不是程序想要去处理的。典型的例子是 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/OutOfMemoryError.html" target="_blank" rel="noopener">OutOfMemeryError</a> 或者 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/StackOverflowError.html" target="_blank" rel="noopener">StackOverflowError</a>。导致这两个问题的原因都是程序控制的外部状况并且程序不能处理它。<br>所以，最好不要捕获 <em>Throwable</em> 除非你百分之百确定你处于异常的情况，并且你能够或者需要处理这些错误。</li>
+</ol>
+<pre><code class="Java">public void doNotCatchThrowable() {
+    try {
+        // do something
+    } catch (Throwable t) {
+        // don&#39;t do this!
+    }
+}
+</code></pre>
+<ol start="7">
+<li>不要忽略异常<br>你曾经分析过只执行了你测试用例的第一部分的 bug 报告吗？<br>这通常是忽略异常造成的。程序员或许很确定它不会被抛出，并且会加一个不会被处理或者记录它的捕获块。当你找到这个块时，你大概率也会找到其中一个著名的“这个永远不会发生”的注释。</li>
+</ol>
+<pre><code class="Java">public void doNotIgnoreExceptions() {
+    try {
+        // do something
+    } catch (NumberFormatException e) {
+        // this will never happen
+    }
+}
+</code></pre>
+<p>那么，你可能正在分析一个不可能发生的问题。<br>所以，请不要忽略异常。你不知道未来这个代码会变成什么样子。可能有人会移除防止异常事件的验证而不去确认是否会出问题。或者说抛出异常的代码发生了改变现在又在相同的类中抛出了多个异常，调用的代码并没有防止所有的这些异常。<br>你应该至少写一个日志信息来告诉所有人这些难以置信的问题已经发生了，其他人需要去检查一下。  </p>
+<pre><code class="Java">public void logAnException() {
+    try {
+        // do something
+    } catch (NumberFormatException e) {
+        log.error(&quot;This should never happen: &quot; + e);
+    }
+}
+</code></pre>
+<ol start="8">
+<li>不要记录和抛出<br>这可能是这份最佳实践中最容易被忽略的。你可以找到大量的代码片段甚至包里面都有获取、记录和重新抛出的异常。</li>
+</ol>
+<pre><code class="Java">try {
+    new Long(&quot;xyz&quot;);
+} catch (NumberFormatException e) {
+    log.error(e);
+    throw e;
+}
+</code></pre>
+<p>当一个异常发生的时候，人们可以非常简单地记录这个异常，然后重新抛出，调用的代码就能在合适的地方处理它。但是这样会为同一个异常写入大量的错误信息。</p>
+<pre><code class="Java">17:44:28,945 ERROR TestExceptionHandling:65 - java.lang.NumberFormatException: For input string: &quot;xyz&quot;
+Exception in thread &quot;main&quot; java.lang.NumberFormatException: For input string: &quot;xyz&quot;
+at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+at java.lang.Long.parseLong(Long.java:589)
+at java.lang.Long.(Long.java:965)
+at com.stackify.example.TestExceptionHandling.logAndThrowException(TestExceptionHandling.java:63)
+at com.stackify.example.TestExceptionHandling.main(TestExceptionHandling.java:58)
+</code></pre>
+<p>这些额外的消息并不会加入任何信息。就像最佳实践4所说的一样，异常信息应该描述异常的事件。堆栈信息会告诉你哪个类、方法和行的异常被抛出了。<br>如果你需要加入额外的信息，你应该捕获这些异常并且将之包装成自定义的。但是要保证遵循最佳实践9。  </p>
+<pre><code class="Java">public void wrapException(String input) throws MyBusinessException {
+    try {
+        // do something
+    } catch (NumberFormatException e) {
+        throw new MyBusinessException(&quot;A message that describes the error.&quot;, e);
+    }
+}
+</code></pre>
+<p>所以，只捕获你想要处理的异常。其它的，在方法签名中具体说明，让调用者小心就行了。  </p>
+<ol start="9">
+<li>在不消耗异常的情况下包装它<br>有时候你最好捕获一个基本异常并且包装成自定义方法。举一个很典型的例子：一个程序或者框架的详细的业务异常。这允许你添加额外的信息，还可以实现你异常的明确处理。<br>当你这样做时，确保将原本的异常设为原因。<em>Exception</em> 类提供了明确的构造方法可以将 <em>Throwable</em> 当作一个参数。另外，你失去了堆栈信息和原始异常信息，这样会导致你很难去分析异常事件和导致异常的原因。  </li>
+</ol>
+<pre><code class="Java">public void wrapException(String input) throws MyBusinessException {
+    try {
+        // do something
+    } catch (NumberFormatException e) {
+        throw new MyBusinessException(&quot;A message that describes the error.&quot;, e);
+    }
+}
+</code></pre>
+<ol start="10">
+<li>总结<br>如你所见，当你抛出和捕获异常时又很多问题需要去考虑。它们中的大多数都以提高你代码的可读性或者你接口的可用性作为目标。<br>异常大多数时候同时是一个错误处理机制和一个沟通媒介。所以，你应该确保讨论最佳的实践并且与你的同事制定一定的规则，这样每个人都能理解和使用这些平常的概念。</li>
+</ol>
+
+        </div>
+        <!-- .entry-content -->
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/07/08/ORA-00054-resource-busy-and-acquire-with-NOWAIT-specified-or-timeout-expired/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                ORA-00054:resource busy and acquire with NOWAIT specified or timeout expired</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2019/06/24/五种开源协议的区别/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                五种开源协议的区别</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/07/14/Caprice-2019-07-14/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/07/14/Caprice-2019-07-14/">
-    Caprice-2019-07-14</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-7-14</div>
-    <p>
-    今日的一些想法</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/07/14/Caprice-2019-07-14/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
-    <article class="post post-list" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2019/06/23/Caprice-2019-06-23/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
-        </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt>
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2019/06/23/Caprice-2019-06-23/">
-    Caprice-2019-06-23</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2019-6-23</div>
-    <p>
-    今日随想</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2019/06/23/Caprice-2019-06-23/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href="elmiraj.top" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/Elmiraj/cdn/img/custom/Popuko.png" itemprop="image" alt="Elmiraj" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="elmiraj.top" itemprop="url" rel="author">Elmiraj</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>ToolMan</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
