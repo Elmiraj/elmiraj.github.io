@@ -43,7 +43,7 @@
     <link href="/2019/07/30/%E6%AD%BB%E4%BA%A1%E4%BB%8E%E6%B2%A1%E7%A6%BB%E6%88%91%E9%82%A3%E4%B9%88%E8%BF%91%E8%BF%87/"/>
     <id>/2019/07/30/死亡从没离我那么近过/</id>
     <published>2019-07-30T06:17:40.000Z</published>
-    <updated>2019-07-30T07:06:05.674Z</updated>
+    <updated>2019-09-28T06:13:11.284Z</updated>
     
     <summary type="html">
     
@@ -89,7 +89,7 @@
     <link href="/2019/07/08/ORA-00054-resource-busy-and-acquire-with-NOWAIT-specified-or-timeout-expired/"/>
     <id>/2019/07/08/ORA-00054-resource-busy-and-acquire-with-NOWAIT-specified-or-timeout-expired/</id>
     <published>2019-07-08T10:53:42.000Z</published>
-    <updated>2019-07-14T07:29:03.971Z</updated>
+    <updated>2019-09-28T06:14:41.389Z</updated>
     
     <summary type="html">
     
@@ -173,7 +173,7 @@
     <link href="/2019/06/23/Everything-about-Redis/"/>
     <id>/2019/06/23/Everything-about-Redis/</id>
     <published>2019-06-23T05:31:52.000Z</published>
-    <updated>2019-06-25T00:51:36.000Z</updated>
+    <updated>2019-09-28T06:16:05.189Z</updated>
     
     <summary type="html">
     
@@ -195,7 +195,7 @@
     <link href="/2019/06/21/%E6%8F%90%E4%BE%9B%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%92%8C%E8%BF%87%E6%BB%A4%E7%9A%84DNS%E6%9C%8D%E5%8A%A1/"/>
     <id>/2019/06/21/提供隐私保护和过滤的DNS服务/</id>
     <published>2019-06-21T02:07:48.000Z</published>
-    <updated>2019-06-21T14:45:08.000Z</updated>
+    <updated>2019-09-28T06:17:12.938Z</updated>
     
     <summary type="html">
     
@@ -226,9 +226,9 @@
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
       <category term="Java" scheme="/tags/Java/"/>
+    
+      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   
@@ -310,9 +310,9 @@
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
       <category term="Java" scheme="/tags/Java/"/>
+    
+      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   
@@ -396,13 +396,13 @@
       <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
+      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
       <category term="东野圭吾" scheme="/tags/%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE/"/>
     
       <category term="日本" scheme="/tags/%E6%97%A5%E6%9C%AC/"/>
     
       <category term="读过" scheme="/tags/%E8%AF%BB%E8%BF%87/"/>
-    
-      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   
