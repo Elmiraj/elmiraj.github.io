@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-09-28T06:00:29.265Z</updated>
+  <updated>2019-10-09T03:23:20.503Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>对香港问题的一些看法</title>
+    <link href="/2019/10/09/%E5%AF%B9%E9%A6%99%E6%B8%AF%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9C%8B%E6%B3%95/"/>
+    <id>/2019/10/09/对香港问题的一些看法/</id>
+    <published>2019-10-09T03:12:05.000Z</published>
+    <updated>2019-10-09T03:23:20.503Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;我希望和平与自由&quot;&gt;&lt;a href=&quot;#我希望和平与自由&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="香港" scheme="/tags/%E9%A6%99%E6%B8%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次git误操作</title>
@@ -226,9 +252,9 @@
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Java" scheme="/tags/Java/"/>
-    
       <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="Java" scheme="/tags/Java/"/>
     
   </entry>
   
@@ -310,9 +336,9 @@
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Java" scheme="/tags/Java/"/>
-    
       <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="Java" scheme="/tags/Java/"/>
     
   </entry>
   
@@ -396,13 +422,13 @@
       <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
-      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
       <category term="东野圭吾" scheme="/tags/%E4%B8%9C%E9%87%8E%E5%9C%AD%E5%90%BE/"/>
     
       <category term="日本" scheme="/tags/%E6%97%A5%E6%9C%AC/"/>
     
       <category term="读过" scheme="/tags/%E8%AF%BB%E8%BF%87/"/>
+    
+      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
     
   </entry>
   
