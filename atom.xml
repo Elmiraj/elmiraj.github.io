@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-10-22T08:07:39.403Z</updated>
+  <updated>2019-10-30T03:35:27.237Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Caprice-2019-10-30</title>
+    <link href="/2019/10/30/Caprice-2019-10-30/"/>
+    <id>/2019/10/30/Caprice-2019-10-30/</id>
+    <published>2019-10-30T03:15:49.000Z</published>
+    <updated>2019-10-30T03:35:27.237Z</updated>
+    
+    <summary type="html">
+    
+      苹果它开始了
+    
+    </summary>
+    
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+      <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>Caprice-2019-10-22</title>
@@ -148,9 +168,9 @@
       <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
-      <category term="Caprice" scheme="/tags/Caprice/"/>
-    
       <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="Caprice" scheme="/tags/Caprice/"/>
     
   </entry>
   
@@ -232,9 +252,9 @@
       <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
-      <category term="Caprice" scheme="/tags/Caprice/"/>
-    
       <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="Caprice" scheme="/tags/Caprice/"/>
     
   </entry>
   
@@ -425,28 +445,6 @@
       <category term="ecom" scheme="/tags/ecom/"/>
     
       <category term="html" scheme="/tags/html/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在成都吃‘独食’</title>
-    <link href="/2019/06/03/%E5%9C%A8%E6%88%90%E9%83%BD%E5%90%83%E2%80%98%E7%8B%AC%E9%A3%9F%E2%80%99/"/>
-    <id>/2019/06/03/在成都吃‘独食’/</id>
-    <published>2019-06-03T05:36:05.000Z</published>
-    <updated>2019-06-08T06:35:27.000Z</updated>
-    
-    <summary type="html">
-    
-      成都好吃的‘独食’店
-    
-    </summary>
-    
-      <category term="生活" scheme="/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="成都" scheme="/tags/%E6%88%90%E9%83%BD/"/>
-    
-      <category term="美食" scheme="/tags/%E7%BE%8E%E9%A3%9F/"/>
     
   </entry>
   
