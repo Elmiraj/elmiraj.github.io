@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-10-30T03:35:27.237Z</updated>
+  <updated>2019-10-31T03:21:29.440Z</updated>
   <id>/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Caprice-2019-10-31</title>
+    <link href="/2019/10/31/Caprice-2019-10-31/"/>
+    <id>/2019/10/31/Caprice-2019-10-31/</id>
+    <published>2019-10-31T03:16:36.000Z</published>
+    <updated>2019-10-31T03:21:29.440Z</updated>
+    
+    <summary type="html">
+    
+      今日份胡思乱想
+    
+    </summary>
+    
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+      <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="Caprice" scheme="/tags/Caprice/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Caprice-2019-10-30</title>
     <link href="/2019/10/30/Caprice-2019-10-30/"/>
     <id>/2019/10/30/Caprice-2019-10-30/</id>
     <published>2019-10-30T03:15:49.000Z</published>
-    <updated>2019-10-30T03:35:27.237Z</updated>
+    <updated>2019-10-31T03:23:14.659Z</updated>
     
     <summary type="html">
     
@@ -33,6 +55,8 @@
     
     
       <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="Caprice" scheme="/tags/Caprice/"/>
     
   </entry>
   
@@ -327,7 +351,7 @@
     <link href="/2019/06/10/Caprice-2019-06-10/"/>
     <id>/2019/06/10/Caprice-2019-06-10/</id>
     <published>2019-06-10T14:49:21.000Z</published>
-    <updated>2019-07-26T08:04:59.282Z</updated>
+    <updated>2019-10-31T03:25:18.594Z</updated>
     
     <summary type="html">
     
@@ -339,6 +363,8 @@
     
     
       <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="Caprice" scheme="/tags/Caprice/"/>
     
   </entry>
   
@@ -423,28 +449,6 @@
     
     
       <category term="Java" scheme="/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>uv-和-pv-的区别</title>
-    <link href="/2019/06/08/uv-%E5%92%8C-pv-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>/2019/06/08/uv-和-pv-的区别/</id>
-    <published>2019-06-08T05:18:09.000Z</published>
-    <updated>2019-06-12T07:50:50.000Z</updated>
-    
-    <summary type="html">
-    
-      PV, UV, VV 等是网站分析中最基础，最常见的指标。
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="ecom" scheme="/tags/ecom/"/>
-    
-      <category term="html" scheme="/tags/html/"/>
     
   </entry>
   
