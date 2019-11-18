@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Book-程序员练级攻略书单 | elmiraj</title>
+  <title itemprop="name">SQL merge into | elmiraj</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -316,11 +316,11 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/Fate/568635.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/Fate/568635.png">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
-      Book-程序员练级攻略书单</h1>
+      SQL merge into</h1>
       <p class="entry-census">
         <span>
           <a href="elmiraj.top">
@@ -332,7 +332,7 @@
         </span>
         <span class="bull">
         ·</span>
-        2019-6-8<span class="bull">
+        2019-11-12<span class="bull">
         ·</span>
       <span id="busuanzi_value_page_pv"></span>次阅读</p>
     </header>
@@ -346,23 +346,10 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><ol>
-<li>《代码大全》</li>
-<li>《Java 核心技术 · 卷 I》</li>
-<li>《重构：改善既有代码的设计》</li>
-<li>《修改代码的艺术》</li>
-<li>《代码整洁之道》</li>
-<li>《程序员的职业素养》</li>
-<li>《Spring 实战》</li>
-<li>《Spring Boot 实战》</li>
-<li>《Effective Java》</li>
-<li>《Java 并发编程实战》</li>
-<li>《Java 性能权威指南》</li>
-<li>《深入理解 Java 虚拟机》</li>
-<li>《Java 编程思想》</li>
-<li>《精通 Spring 4.x》</li>
-<li>《设计模式 可复用面向对象软件的基础》</li>
-</ol>
+          <pre><code class="SQL">merge into tt_audit a using (select * from tt_audit_temp_20191111) b on (a.audit_code = b.c)
+when matched then update set a.APPLY_AUDIT_AMOUNT = b.a, a.REAL_AUDIT_AMOUNT = b.b;
+</code></pre>
+<p>通过上述语句可以实现批量更新，这样就很简单</p>
 
         </div>
         <!-- .entry-content -->
@@ -381,36 +368,19 @@
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+        
           
-            <div class="post-nepre half previous">
+            <div class="post-nepre full next">
           
-            <a href="/2019/06/08/Caprice-2019-06-08/" rel="prev">
+            <a href="/2019/11/04/Caprice-2019-11-04/" rel="next">
               <div class="background">
                 <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/EVA/399996.png" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                Caprice-2019-06-08</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2019/06/08/十年如一日，练习编程/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/Elmiraj/Pictures/various/816253f77df94.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                十年如一日，练习编程</h3>
+                Caprice-2019-11-04</h3>
                 <hr>
               </div>
             </a>
@@ -443,7 +413,7 @@
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>ToolMan</p>
+        <p><i class="iconfont icon-write"></i>DaZai</p>
       </section>
     </main><!-- #main -->
   </div><!-- #primary -->

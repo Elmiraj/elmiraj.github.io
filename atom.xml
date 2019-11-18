@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2019-10-31T03:21:29.440Z</updated>
+  <updated>2019-11-12T01:07:57.701Z</updated>
   <id>/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL merge into</title>
+    <link href="/2019/11/12/SQL-merge-into/"/>
+    <id>/2019/11/12/SQL-merge-into/</id>
+    <published>2019-11-12T01:05:29.000Z</published>
+    <updated>2019-11-12T01:07:57.701Z</updated>
+    
+    <summary type="html">
+    
+      使用 merge into 批量更新数据
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="SQL" scheme="/tags/SQL/"/>
+    
+      <category term="JAVA" scheme="/tags/JAVA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Caprice-2019-11-04</title>
+    <link href="/2019/11/04/Caprice-2019-11-04/"/>
+    <id>/2019/11/04/Caprice-2019-11-04/</id>
+    <published>2019-11-04T08:25:15.000Z</published>
+    <updated>2019-11-04T08:36:23.305Z</updated>
+    
+    <summary type="html">
+    
+      今天不开心
+    
+    </summary>
+    
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+      <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="Caprice" scheme="/tags/Caprice/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Caprice-2019-11-01</title>
+    <link href="/2019/11/01/Caprice-2019-11-01/"/>
+    <id>/2019/11/01/Caprice-2019-11-01/</id>
+    <published>2019-11-01T11:49:27.000Z</published>
+    <updated>2019-11-03T06:48:12.254Z</updated>
+    
+    <summary type="html">
+    
+      今天的胡思乱想
+    
+    </summary>
+    
+      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+      <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+      <category term="Caprice" scheme="/tags/Caprice/"/>
+    
+  </entry>
   
   <entry>
     <title>Caprice-2019-10-31</title>
@@ -98,9 +164,9 @@
     
       <category term="Java" scheme="/tags/Java/"/>
     
-      <category term="Oracle" scheme="/tags/Oracle/"/>
-    
       <category term="SQL" scheme="/tags/SQL/"/>
+    
+      <category term="Oracle" scheme="/tags/Oracle/"/>
     
   </entry>
   
@@ -340,9 +406,9 @@
       <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="Java" scheme="/tags/Java/"/>
-    
       <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="Java" scheme="/tags/Java/"/>
     
   </entry>
   
@@ -387,68 +453,6 @@
       <category term="Java" scheme="/tags/Java/"/>
     
       <category term="JVM" scheme="/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Caprice-2019-06-08</title>
-    <link href="/2019/06/08/Caprice-2019-06-08/"/>
-    <id>/2019/06/08/Caprice-2019-06-08/</id>
-    <published>2019-06-08T08:24:19.000Z</published>
-    <updated>2019-06-08T08:36:54.000Z</updated>
-    
-    <summary type="html">
-    
-      今日随想
-    
-    </summary>
-    
-      <category term="随想" scheme="/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-      <category term="随想" scheme="/tags/%E9%9A%8F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Book-程序员练级攻略书单</title>
-    <link href="/2019/06/08/Book-%E7%A8%8B%E5%BA%8F%E5%91%98%E7%BB%83%E7%BA%A7%E6%94%BB%E7%95%A5%E4%B9%A6%E5%8D%95/"/>
-    <id>/2019/06/08/Book-程序员练级攻略书单/</id>
-    <published>2019-06-08T07:40:18.000Z</published>
-    <updated>2019-06-08T08:12:38.000Z</updated>
-    
-    <summary type="html">
-    
-      好的书和不好的书最大的不一样的是，好的书在你不同的阶段来读，你会有不同的收获，而且还会产生更多的深层次的思考！
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Java" scheme="/tags/Java/"/>
-    
-      <category term="读书" scheme="/tags/%E8%AF%BB%E4%B9%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>十年如一日，练习编程</title>
-    <link href="/2019/06/08/%E5%8D%81%E5%B9%B4%E5%A6%82%E4%B8%80%E6%97%A5%EF%BC%8C%E7%BB%83%E4%B9%A0%E7%BC%96%E7%A8%8B/"/>
-    <id>/2019/06/08/十年如一日，练习编程/</id>
-    <published>2019-06-08T07:04:02.000Z</published>
-    <updated>2019-06-08T07:31:39.000Z</updated>
-    
-    <summary type="html">
-    
-      生命如此短暂，技能如此高深
-    
-    </summary>
-    
-      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="Java" scheme="/tags/Java/"/>
     
   </entry>
   
